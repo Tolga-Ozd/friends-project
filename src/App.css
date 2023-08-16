@@ -14,3 +14,18 @@ header {
     justify-content: center;
     padding: 20px;
 }
+
+.taskdiv{
+   
+    display: flex;
+    justify-content: center;
+}
+
+.taskform{
+border: 1px solid lightblue;
+padding: 20px;
+width: 300px;
+background-color: aliceblue;
+border-radius: 30px;
+margin:20px;
+}

@@ -9,7 +9,7 @@ function Header() {
         <h1>
             <FormatListNumberedIcon />
             <CreateIcon />
-              To Do Uygulaması
+              To Do Application
         </h1>
     </header>
   )
