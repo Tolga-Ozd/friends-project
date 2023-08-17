@@ -1,67 +1,55 @@
-import React, { useState } from 'react'
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import React, { useState } from 'react';
 
-function CreateTask(props) {
-  const [task , setTask] = useState({
-    title: "",
-    content : "",
-  })
+export default function CreateTask(props) {
+  const [task, setTask] = useState({
+    title: '',
+    content: '',
+  });
+  function detectChange(event) {
+    const { name, value } = event.target;
 
-  function detectChange(e) {
-    const {name , value} = e.target;
-
-    setTask((prevTask) =>{
+    setTask((prevTask) => {
       return {
         ...prevTask,
-        [name] : value,
-      }
-    })
+        [name]: value,
+      };
+    });
   }
 
   function submitTask(event) {
-    props.onAdd(task) ;
+    props.onAdd(task);
     setTask({
-      title:"",
-      content:"",
-    }),
+      title: '',
+      content: '',
+    });
     event.preventDefault();
   }
 
   return (
-    <div className='taskdiv'>
-        <Form className='taskform'>
+    <div className="todoDivArea">
+      <form className="todoDiv">
+        <input
+          type="text"
+          onChange={detectChange}
+          className="form-control todoText mb-3"
+          name="title"
+          value={task.title}
+          placeholder="Başlık"
+        />
 
-            <Form.Group
-             name= "title" 
-             className="mb-3 todoText " 
-             controlId="exampleForm.ControlInput1"
-             value= {task.title}
-             onChange={detectChange}
-             >
-             
-                <Form.Label>Todo Top</Form.Label>
-                <Form.Control type="text" />
-            </Form.Group>
+        <textarea
+          name="content"
+          value={task.content}
+          onChange={detectChange}
+          className="form-control todoText mb-3"
+          rows={3}
+          placeholder="İşinizi Yazınız"
+        ></textarea>
 
-            <Form.Group 
-            name="content" 
-            className="mb-3  
-            todoText" 
-            controlId="exampleForm.ControlTextarea1"
-            value= {task.content}
-            onChange={detectChange}
-
-            >
-                <Form.Label>Todo textarea</Form.Label>
-                <Form.Control  placeholder="write your to do" as="textarea" rows={3} />
-            </Form.Group>
-
-            <Button size="lg" variant="outline-info" onClick={submitTask}>Add</Button>
-
-        </Form>
+        <button className="btn btn-primary todoButton" onClick={submitTask}>
+          Ekle
+        </button>
+      </form>
     </div>
-  )
+  );
 }
-
-export default CreateTask

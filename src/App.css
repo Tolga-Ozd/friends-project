@@ -1,31 +1,46 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-body {
-    background-color: bisque;
-}
-
-header {
-    background-color: aqua;
+  }
+  
+  body {
+    background: #fff;
+  }
+  
+  header {
+    background-color: lightblue;
+    padding: 16px 32px;
     display: flex;
     justify-content: center;
+  }
+  
+  .todoDivArea {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .todoDiv {
     padding: 20px;
-}
-
-.taskdiv{
-   
-    display: flex;
-    justify-content: center;
-}
-
-.taskform{
-border: 1px solid lightblue;
-padding: 20px;
-width: 300px;
-background-color: aliceblue;
-border-radius: 30px;
-margin:20px;
-}
+    width: 250px;
+    border: 1px solid lightblue;
+    border-radius: 30px;
+    margin-top: 20px;
+  }
+  
+  .todoText {
+    border: none;
+  }
+  
+  .todoButton {
+    width: 100px;
+  }
+  
+  .contentDiv {
+    border: 1px solid lightblue;
+    border-radius: 30px;
+    min-width: 250px;
+    text-align: center;
+    padding: 20px;
+  }
+  
