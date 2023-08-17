@@ -19,13 +19,13 @@ function CreateTask(props) {
     })
   }
 
-  function submitTask(e) {
+  function submitTask(event) {
     props.onAdd(task) ;
     setTask({
       title:"",
       content:"",
     }),
-    e.preventDefault();
+    event.preventDefault();
   }
 
   return (
