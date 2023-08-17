@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import CreateTask from './CreateTask';
 import Header from './Header';
+import Footer from './Footer';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+
       <CreateTask onAdd={addTask} />
       <div className="container">
         <div className="row my-5">
@@ -40,6 +42,9 @@ function App() {
           })}
         </div>
       </div>
+
+      <Footer />
+
     </div>
   );
 }
